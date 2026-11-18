@@ -10,10 +10,16 @@ commands, then compile it into a PDF. The source is not the final page layout.
 
 === "Browser"
 
-    Start a blank project in [Overleaf](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes).
-    Upload the source linked below or paste it into `main.tex`, choose
-    **pdfLaTeX**, and select **Recompile**. Do not upload confidential documents
-    without authorization.
+    [Overleaf](https://www.overleaf.com/) is an online LaTeX editor. Your project
+    files are stored online, and its servers turn your source into a PDF:
+    no local TeX installation is required.
+
+    The file list organizes `.tex` files, bibliographies, images, and data.
+    The source editor is where you write LaTeX; the PDF preview shows the
+    compiled result. Editing source and compiling it are separate steps.
+    See [the Overleaf walkthrough below](#in-overleaf).
+
+    Do not upload confidential documents without authorization.
 
 === "Local computer"
 
@@ -52,6 +58,45 @@ selects a text-font encoding, not an input-file encoding.
 `lmodern` selects scalable Latin Modern fonts.
 
 ### Compile
+
+#### In Overleaf
+
+1. Open [Overleaf](https://www.overleaf.com/), create an account or sign in,
+   and choose **New project > Blank project**. Name it `Hello LaTeX`.
+2. Open the generated `main.tex` in the file list and replace its contents
+   with the complete example above, from `\documentclass` to `\end{document}`.
+   Do not include the Markdown code fences.
+3. In the project settings, select **pdfLaTeX** as the compiler and confirm
+   that `main.tex` is the main document.
+4. Select **Recompile**. Overleaf runs LaTeX and updates the PDF preview.
+   Changes to your source are saved online; recompile after editing to see
+   their effect, or enable automatic compilation.
+5. Compare the preview with the [expected output](#expected-output). If the
+   compile reports errors, open the logs and fix the first source error.
+   An older or incomplete PDF can still be visible, so a preview alone is
+   not proof that the latest source compiled successfully.
+6. Download the PDF when you need the finished document. Also download the
+   project source ZIP when you need a backup or want to move your work to
+   another editor; the PDF does not contain your editable LaTeX project.
+
+Use **Share** to invite collaborators and review their access before sharing.
+Available collaboration features and limits depend on the current plan.
+Uploading to Overleaf does not automatically synchronize changes with GitHub.
+For more interface guidance, see Overleaf's
+[first-project guide](https://docs.overleaf.com/getting-started/your-first-project)
+and [compilation guide](https://docs.overleaf.com/getting-started/recompiling-your-project).
+
+!!! tip "Importing other repository examples"
+    For a multi-file example, upload the contents of its folder so that
+    `main.tex` is at the Overleaf project root, retaining folders such as
+    `chapters/` or `sections/`. Include its images and CSV data.
+    Bibliography examples also need the shared `resources/references.bib`:
+    upload it to your Overleaf project root and change
+    `\addbibresource{../../resources/references.bib}` to
+    `\addbibresource{references.bib}` in your Overleaf copy.
+    Keep the repository's original relative paths when compiling locally.
+
+#### On your computer
 
 From the repository root:
 

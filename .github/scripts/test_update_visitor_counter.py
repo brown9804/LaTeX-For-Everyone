@@ -54,6 +54,7 @@ class VisitorCounterTests(unittest.TestCase):
                 self.assertTrue(updated.startswith("Keep this.\n"))
                 self.assertIn("Total%20views-7-limegreen", updated)
                 self.assertIn("Refresh Date: 2026-11-18", updated)
+                self.assertNotIn("not website visits", updated)
             self.assertEqual(json.loads(metrics.read_text(encoding="utf-8"))[0]["count"], 7)
             self.assertEqual(
                 lesson.read_text(encoding="utf-8"),

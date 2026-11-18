@@ -49,7 +49,6 @@ def update_files(root, traffic, refresh_date):
 <div align="center">
   <img src="https://img.shields.io/badge/Total%20views-{total}-limegreen" alt="Total repository views">
   <p>Refresh Date: {refresh_date}</p>
-  <p>GitHub repository views, not website visits.</p>
 </div>
 <!-- END BADGE -->"""
     updates = {}

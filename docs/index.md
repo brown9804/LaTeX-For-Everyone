@@ -1,5 +1,8 @@
 # LaTeX for Everyone
 
+[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
+[brown9804](https://github.com/brown9804) | Atlanta, USA
+
 <div class="learning-intro" markdown>
 
 **From your first document to a reproducible research project.**
@@ -12,14 +15,12 @@ something useful. No previous LaTeX experience is required.
 
 </div>
 
-[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
-[brown9804](https://github.com/brown9804) | Costa Rica
-
 ## Find your next step
 
 | Your goal | Start with | Build toward |
 | --- | --- | --- |
 | Write a first document | [Getting started](getting-started.md) | [Fundamentals](fundamentals.md) |
+| Work without a local installation | [Use Overleaf online](getting-started.md#in-overleaf) | [Your first compiled PDF](getting-started.md#expected-output) |
 | Typeset a problem set | [Mathematics](mathematics.md) | [Tables and figures](tables-figures.md) |
 | Prepare a scientific report | [Academic writing](academic-writing.md) | [Laboratory report](projects/lab-report.md) |
 | Write a paper or thesis | [Bibliographies](bibliography.md) | [Research and theses](research-theses.md) |
@@ -63,6 +64,3 @@ conformance, or compliance with a particular university or publisher's rules.
 - Read the [code of conduct](community/code-of-conduct.md).
 - Consult the [official resources](resources.md) for authoritative package manuals.
 - See [maintenance and counter setup](community/maintaining.md).
-
-The shared footer retains the reference-style repository view badge. It counts
-GitHub repository traffic, not visits to this website.

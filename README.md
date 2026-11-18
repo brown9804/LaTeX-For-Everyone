@@ -1,6 +1,6 @@
 # LaTeX for Everyone: <br> Learning Path - Overview
 
-Costa Rica
+Atlanta, USA
 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
@@ -23,6 +23,7 @@ projects. Built for students, researchers, educators, and professionals.
 <summary><b>Table of Contents</b> (Click to expand)</summary>
 
 - [Learning resources](#learning-resources)
+- [Use Overleaf online](#use-overleaf-online)
 - [Repository structure](#repository-structure)
 - [Compile an example](#compile-an-example)
 - [Website and validation](#website-and-validation)
@@ -36,6 +37,7 @@ projects. Built for students, researchers, educators, and professionals.
 | Topic | Lesson |
 | --- | --- |
 | First document and fundamentals | [Getting started](docs/getting-started.md), [fundamentals](docs/fundamentals.md) |
+| Online editing with Overleaf | [Browser editor, compilation, and project files](docs/getting-started.md#in-overleaf) |
 | Mathematical notation | [Equations, matrices, and units](docs/mathematics.md) |
 | Tables and figures | [Floats, captions, and references](docs/tables-figures.md) |
 | Academic writing | [Scientific article structure](docs/academic-writing.md) |
@@ -46,6 +48,31 @@ projects. Built for students, researchers, educators, and professionals.
 | Reusable starting points | [Article, thesis, and slide templates](docs/templates.md) |
 | Practical projects | [Laboratory report](docs/projects/lab-report.md), [research workflow](docs/projects/research-workflow.md) |
 | Reference | [Cheat sheet](docs/cheat-sheet.md), [troubleshooting](docs/troubleshooting.md), [official resources](docs/resources.md) |
+
+## Use Overleaf online
+
+[Overleaf](https://www.overleaf.com/) is an online LaTeX editor: you edit
+source files in your browser, its servers compile them, and a PDF preview
+shows the result. You do not need to install a TeX distribution on your
+computer. A project can contain `.tex` files, a bibliography, images, and data;
+the editor keeps those files together rather than treating the PDF as the source.
+
+To try this repository's first example:
+
+1. Sign in to Overleaf and choose **New project > Blank project**.
+2. Replace the generated `main.tex` with
+   [the complete first-document source](examples/hello-latex/main.tex).
+3. Select **pdfLaTeX** as the compiler and **Recompile** to update the PDF.
+4. Compare the preview with the
+   [expected output](docs/getting-started.md#expected-output), then change a
+   sentence and compile again.
+
+Overleaf also supports sharing a project with collaborators. Review permissions,
+current plan limits, and your organization's data policies before uploading
+or sharing documents. The [getting-started guide](docs/getting-started.md#in-overleaf)
+explains the editor, logs, downloads, and importing multi-file examples.
+Overleaf projects and this GitHub repository are separate: editing one does not
+automatically update the other.
 
 ## Repository structure
 
@@ -109,7 +136,7 @@ Generated site files and LaTeX build outputs are not committed.
 ## Repository views counter
 
 The reference-style badge below reports accumulated **GitHub repository
-views**, including repeat visits, not GitHub Pages traffic or unique people.
+views**, including repeat visits.
 The [counter workflow](.github/workflows/use-visitor-counter.yml) merges daily
 traffic into [metrics.json](metrics.json), updates this README and the shared
 website footer, and requests a fresh Pages build.
@@ -140,6 +167,5 @@ were inspired by
 <div align="center">
   <img src="https://img.shields.io/badge/Total%20views-0-limegreen" alt="Total repository views">
   <p>Refresh Date: 2026-11-18</p>
-  <p>GitHub repository views, not website visits.</p>
 </div>
 <!-- END BADGE -->

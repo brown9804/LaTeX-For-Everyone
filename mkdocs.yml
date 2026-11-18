@@ -19,14 +19,14 @@ theme:
     repo: fontawesome/brands/github
   palette:
     - scheme: default
-      primary: indigo
-      accent: teal
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-night
         name: Switch to dark theme
     - scheme: slate
-      primary: indigo
-      accent: teal
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-sunny
         name: Switch to light theme
@@ -46,6 +46,9 @@ theme:
 plugins:
   - search:
       lang: en
+
+extra:
+  generator: false
 
 markdown_extensions:
   - admonition

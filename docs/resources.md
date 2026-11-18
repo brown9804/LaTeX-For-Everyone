@@ -12,6 +12,19 @@ to external documentation; it does not redistribute those works.
 - [CTAN](https://ctan.org/): package descriptions, licenses, and manuals.
 - [latexmk on CTAN](https://ctan.org/pkg/latexmk): automated compilation.
 
+## Online editing with Overleaf
+
+[Overleaf](https://www.overleaf.com/) combines a browser-based source editor,
+online LaTeX compilation, and a PDF preview. It is an alternative to installing
+a TeX distribution locally, not a different document format: you still write
+LaTeX and manage the source files used to produce your PDF.
+
+Start with this platform's [Overleaf walkthrough](getting-started.md#in-overleaf),
+then consult the official [first-project guide](https://docs.overleaf.com/getting-started/your-first-project)
+and [compilation guide](https://docs.overleaf.com/getting-started/recompiling-your-project).
+Check current sharing limits and data policies before starting a collaborative
+or confidential project.
+
 ## Writing and mathematics
 
 - [amsmath](https://ctan.org/pkg/amsmath): displayed and aligned mathematics.
