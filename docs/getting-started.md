@@ -1,12 +1,21 @@
 ---
-title: Getting started with LaTeX
+pagetitle: Getting started with LaTeX
 lang: en
 ---
+
+# Getting started with LaTeX
+
+Costa Rica
+
+[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
+[brown9804](https://github.com/brown9804)
+
+Last updated: 2026-11-18
 
 [Home](index.md) |
 [Edit on GitHub](https://github.com/brown9804/LaTeX-For-Everyone/blob/main/docs/getting-started.md)
 
-# Getting started with LaTeX
+----------
 
 > LaTeX separates a document's content from its typesetting. Write a `.tex`
 > source file, compile it, and review the resulting PDF.
@@ -165,3 +174,11 @@ distribution must include Beamer and its dependencies.
 | File not found | Check the filename, relative path, capitalization, and installed packages. |
 
 [Return to the learning path](index.md)
+
+<!-- START BADGE -->
+<div align="center">
+  <img src="https://img.shields.io/badge/Total%20views-0-limegreen" alt="Total repository views">
+  <p>Refresh Date: 2026-11-18</p>
+  <p>GitHub repository views, not website visits.</p>
+</div>
+<!-- END BADGE -->

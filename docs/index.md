@@ -1,12 +1,18 @@
 ---
-title: LaTeX for Everyone
+pagetitle: LaTeX for Everyone
 lang: en
 ---
 
-# LaTeX for Everyone
+# LaTeX for Everyone: <br> Learning Path - Overview
 
-[GitHub repository](https://github.com/brown9804/LaTeX-For-Everyone) |
-[Maintainer: brown9804](https://github.com/brown9804)
+Costa Rica
+
+[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
+[brown9804](https://github.com/brown9804)
+
+Last updated: 2026-11-18
+
+[GitHub repository](https://github.com/brown9804/LaTeX-For-Everyone)
 
 ----------
 
@@ -62,5 +68,18 @@ problems. Do not include private documents or credentials.
 The documentation layout and Markdown-to-HTML publishing approach follow
 [Cloud-DevOps-Overview](https://github.com/brown9804/Cloud-DevOps-Overview).
 The reference currently has no `docs` folder; this repository adds one for its
-own LaTeX learning content. The original Cloud-specific tests and visitor-counter
-automation are not applicable here.
+own LaTeX learning content. The original Cloud-specific tests are not applicable
+here.
+
+The counter below follows the reference's badge format and displays GitHub
+repository views, not website visits or unique people. Daily refresh requires
+the repository's `TRAFFIC_TOKEN` secret; see the
+[setup instructions](https://github.com/brown9804/LaTeX-For-Everyone#repository-views-counter).
+
+<!-- START BADGE -->
+<div align="center">
+  <img src="https://img.shields.io/badge/Total%20views-0-limegreen" alt="Total repository views">
+  <p>Refresh Date: 2026-11-18</p>
+  <p>GitHub repository views, not website visits.</p>
+</div>
+<!-- END BADGE -->
