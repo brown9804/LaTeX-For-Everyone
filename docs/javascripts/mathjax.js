@@ -14,7 +14,9 @@ window.MathJax = {
       MathJax.startup.defaultReady();
       document$.subscribe(() => {
         MathJax.startup.promise.then(() => {
+          MathJax.startup.output.clearCache();
           MathJax.typesetClear();
+          MathJax.texReset();
           return MathJax.typesetPromise();
         });
       });
