@@ -14,8 +14,9 @@ theme:
   custom_dir: docs/overrides
   language: en
   font: false
+  logo: assets/cloud2br-logo.png
+  favicon: assets/cloud2br-logo.png
   icon:
-    logo: material/book-education
     repo: fontawesome/brands/github
   palette:
     - scheme: default
