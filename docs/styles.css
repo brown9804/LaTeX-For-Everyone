@@ -1,0 +1,68 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.65;
+}
+
+body {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  overflow-wrap: anywhere;
+}
+
+a {
+  color: #0969da;
+}
+
+h1, h2, h3 {
+  line-height: 1.25;
+}
+
+h2 {
+  margin-top: 2rem;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+  background: #f3f5f7;
+  border-radius: 0.4rem;
+}
+
+code {
+  font-family: ui-monospace, monospace;
+}
+
+table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.6rem;
+  border: 1px solid #8c959f;
+  text-align: left;
+}
+
+blockquote {
+  margin-left: 0;
+  padding-left: 1rem;
+  border-left: 4px solid #0969da;
+}
+
+summary {
+  cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+  a {
+    color: #79b8ff;
+  }
+
+  pre {
+    background: #1c2128;
+  }
+}
