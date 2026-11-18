@@ -1,0 +1,39 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\newcommand{\toolname}{LaTeX}
+
+\title{A Small Document with Structure}
+\author{LaTeX for Everyone}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+\label{sec:introduction}
+\toolname{} separates content from its appearance. A blank line starts
+a new paragraph; repeated spaces do not create layout.
+
+This paragraph contains \textbf{bold text}, \emph{emphasis}, and an
+escaped percentage: 25\%.
+
+\section{A short plan}
+Section~\ref{sec:introduction} introduced the main idea.
+\begin{enumerate}
+  \item Write meaningful headings.
+  \item Compile the document.
+  \item Read the PDF and fix the first reported error.
+\end{enumerate}
+
+\subsection{Things to bring}
+\begin{itemize}
+  \item A text editor and a TeX distribution.
+  \item A willingness to revise.
+\end{itemize}
+
+Visit the \href{https://www.latex-project.org/}{LaTeX Project}
+for official documentation.
+\end{document}

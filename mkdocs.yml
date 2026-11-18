@@ -1,0 +1,110 @@
+site_name: LaTeX for Everyone
+site_description: Learn LaTeX through guided tutorials, compilable examples, reusable templates, and complete projects.
+site_url: https://brown9804.github.io/LaTeX-For-Everyone/
+repo_url: https://github.com/brown9804/LaTeX-For-Everyone
+repo_name: brown9804/LaTeX-For-Everyone
+edit_uri: edit/main/docs/
+use_directory_urls: false
+strict: true
+exclude_docs: |
+  /overrides/
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  language: en
+  font: false
+  icon:
+    logo: material/book-education
+    repo: fontawesome/brands/github
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark theme
+    - scheme: slate
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light theme
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.instant
+    - content.code.copy
+    - content.action.edit
+    - content.action.view
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search:
+      lang: en
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.snippets:
+      base_path: ["."]
+      check_paths: true
+
+extra_css:
+  - styles.css
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+  links:
+    not_found: warn
+    unrecognized_links: warn
+    anchors: warn
+
+nav:
+  - Home:
+      - Welcome: index.md
+      - Learning paths: learning-paths.md
+      - Getting started: getting-started.md
+  - Learn:
+      - Fundamentals: fundamentals.md
+      - Mathematics: mathematics.md
+      - Tables and figures: tables-figures.md
+      - Academic writing: academic-writing.md
+      - Research papers and theses: research-theses.md
+      - Bibliography management: bibliography.md
+      - Beamer presentations: presentations.md
+      - TikZ and PGFPlots: tikz-pgfplots.md
+  - Build:
+      - Reusable templates: templates.md
+      - Practical projects:
+          - Laboratory report: projects/lab-report.md
+          - Research workflow: projects/research-workflow.md
+  - Reference:
+      - Cheat sheet: cheat-sheet.md
+      - Troubleshooting: troubleshooting.md
+      - Official resources: resources.md
+  - Community:
+      - Contributing: community/contributing.md
+      - Code of conduct: community/code-of-conduct.md
+      - Maintaining the platform: community/maintaining.md

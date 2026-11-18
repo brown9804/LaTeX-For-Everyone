@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\title{My First LaTeX Document}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section{Introduction}
+\label{sec:introduction}
+Hello, LaTeX! This paragraph belongs to a numbered section.
+
+\section{A first equation}
+Section~\ref{sec:introduction} started this document.
+\begin{equation}
+  E=mc^2.
+  \label{eq:energy}
+\end{equation}
+Equation~\ref{eq:energy} receives its number automatically.
+\end{document}

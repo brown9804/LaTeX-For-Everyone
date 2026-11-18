@@ -53,7 +53,10 @@ def update_files(root, traffic, refresh_date):
 </div>
 <!-- END BADGE -->"""
     updates = {}
-    for path in [root / "README.md", *sorted((root / "docs").rglob("*.md"))]:
+    for path in [
+        root / "README.md",
+        root / "docs" / "overrides" / "partials" / "visitor-counter.html",
+    ]:
         content = path.read_text(encoding="utf-8")
         if len(BADGE.findall(content)) != 1:
             raise ValueError(f"Expected exactly one counter badge block in {path}.")

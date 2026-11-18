@@ -28,12 +28,13 @@ class VisitorCounterTests(unittest.TestCase):
     def test_badges_update_and_missing_marker_does_not_write(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            (root / "docs").mkdir()
+            partials = root / "docs" / "overrides" / "partials"
+            partials.mkdir(parents=True)
             metrics = root / "metrics.json"
             metrics.write_text("[]\n", encoding="utf-8")
             content = "Keep this.\n<!-- START BADGE -->old<!-- END BADGE -->\n"
             readme = root / "README.md"
-            page = root / "docs" / "index.md"
+            page = partials / "visitor-counter.html"
             readme.write_text(content, encoding="utf-8")
             page.write_text("Missing badge.", encoding="utf-8")
             traffic = {"views": [
@@ -45,6 +46,8 @@ class VisitorCounterTests(unittest.TestCase):
             self.assertEqual(json.loads(metrics.read_text(encoding="utf-8")), [])
 
             page.write_text(content, encoding="utf-8")
+            lesson = root / "docs" / "lesson.md"
+            lesson.write_text("# A lesson without a counter block\n", encoding="utf-8")
             update_files(root, traffic, "2026-11-18")
             for path in (readme, page):
                 updated = path.read_text(encoding="utf-8")
@@ -52,6 +55,10 @@ class VisitorCounterTests(unittest.TestCase):
                 self.assertIn("Total%20views-7-limegreen", updated)
                 self.assertIn("Refresh Date: 2026-11-18", updated)
             self.assertEqual(json.loads(metrics.read_text(encoding="utf-8"))[0]["count"], 7)
+            self.assertEqual(
+                lesson.read_text(encoding="utf-8"),
+                "# A lesson without a counter block\n",
+            )
 
 
 if __name__ == "__main__":

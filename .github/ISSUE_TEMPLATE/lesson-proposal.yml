@@ -1,0 +1,23 @@
+name: Lesson proposal
+description: Propose a focused learning resource or improvement.
+title: "[Lesson]: "
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Learner goal and prerequisites
+      description: What should the learner be able to do after this lesson?
+    validations:
+      required: true
+  - type: textarea
+    id: plan
+    attributes:
+      label: Example, expected output, and exercise
+      description: Explain what the compilable example would demonstrate.
+    validations:
+      required: true
+  - type: textarea
+    id: placement
+    attributes:
+      label: Learning path and sources
+      description: Where does it fit, and are external materials licensed for reuse?

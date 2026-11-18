@@ -1,85 +1,68 @@
----
-pagetitle: LaTeX for Everyone
-lang: en
----
+# LaTeX for Everyone
 
-# LaTeX for Everyone: <br> Learning Path - Overview
+<div class="learning-intro" markdown>
 
-Costa Rica
+**From your first document to a reproducible research project.**
+
+Learn by editing working examples, understanding the output, and building
+something useful. No previous LaTeX experience is required.
+
+[Start learning](getting-started.md){ .md-button .md-button--primary }
+[Choose a learning path](learning-paths.md){ .md-button }
+
+</div>
 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
-[brown9804](https://github.com/brown9804)
+[brown9804](https://github.com/brown9804) | Costa Rica
 
-Last updated: 2026-11-18
+## Find your next step
 
-[GitHub repository](https://github.com/brown9804/LaTeX-For-Everyone)
+| Your goal | Start with | Build toward |
+| --- | --- | --- |
+| Write a first document | [Getting started](getting-started.md) | [Fundamentals](fundamentals.md) |
+| Typeset a problem set | [Mathematics](mathematics.md) | [Tables and figures](tables-figures.md) |
+| Prepare a scientific report | [Academic writing](academic-writing.md) | [Laboratory report](projects/lab-report.md) |
+| Write a paper or thesis | [Bibliographies](bibliography.md) | [Research and theses](research-theses.md) |
+| Give a talk | [Beamer presentations](presentations.md) | [Reusable slide template](templates.md) |
+| Draw a technical diagram | [TikZ and PGFPlots](tikz-pgfplots.md) | [Reproducible project](projects/research-workflow.md) |
 
-----------
+## How the platform works
 
-> A practical, beginner-friendly LaTeX knowledge hub for students, researchers,
-> educators, and professionals.
+- **Read:** Markdown lessons explain the concepts and the expected output.
+- **Run:** complete `.tex` sources live in `examples/`, `templates/`, and
+  `projects/` in the [GitHub repository](https://github.com/brown9804/LaTeX-For-Everyone).
+- **Compare:** each tutorial shows its source directly from the repository at
+  build time, rather than maintaining a second copy.
+- **Practice:** try the exercise and use the expected result to check your work.
+- **Contribute:** suggest corrections, test examples, or submit a focused lesson
+  through the [community guide](community/contributing.md).
 
-<details>
-<summary><b>Learning path</b> (Click to expand)</summary>
+## A practical, accessible learning environment
 
-- [Getting started](getting-started.md)
-- [Your first document](getting-started.md#your-first-document)
-- [Mathematical notation](getting-started.md#mathematical-notation)
-- [Academic writing](getting-started.md#academic-writing)
-- [Presentations](getting-started.md#presentations)
-- [Quick reference](getting-started.md#quick-reference)
-- [Official learning resources](#official-learning-resources)
+Use the search box to find commands, topics, or error messages. Switch between
+light and dark themes with the header button. Code blocks have copy buttons;
+the sidebar, breadcrumbs, and previous/next links help you keep your place.
+On a narrow screen, open the navigation menu in the header.
 
-</details>
+Mathematics is rendered using MathJax, for example
+$\int_0^1 x^2\,\mathrm{d}x=\frac{1}{3}$. Its contextual menu provides additional
+accessibility options. Clear source markup helps, but accessible PDF production
+requires additional checks described in [academic writing](academic-writing.md#accessibility-and-review).
 
-## Start here
+## What validation does and does not establish
 
-Read [Getting started](getting-started.md) to choose an editor, compile your first
-document, and try a reusable article or presentation example.
+GitHub Actions builds this website in strict mode, checks internal links, and
+compiles every standalone learning document with LaTeX and Biber where needed.
+Compiled PDFs and logs are available in the workflow's **latex-examples**
+artifact. A green build does **not** prove scientific validity, accessibility
+conformance, or compliance with a particular university or publisher's rules.
 
-## What you can learn
+## Stay connected
 
-| Area | Practical starting point |
-| --- | --- |
-| Tutorials | Create and compile a minimal document. |
-| Mathematics | Write inline equations, fractions, and aligned expressions. |
-| Academic writing | Structure an article and add cross-references and citations. |
-| Reusable templates | Copy the article and Beamer examples into your own project. |
-| Presentations | Build a slide deck with the Beamer document class. |
-| Cheat sheets | Use the command table for common formatting tasks. |
-| Real-world projects | Turn the article example into a report or the Beamer example into a talk. |
+- [Report a problem or suggest a lesson](https://github.com/brown9804/LaTeX-For-Everyone/issues/new/choose).
+- Read the [code of conduct](community/code-of-conduct.md).
+- Consult the [official resources](resources.md) for authoritative package manuals.
+- See [maintenance and counter setup](community/maintaining.md).
 
-## Contributing
-
-Open an issue or pull request in the
-[repository](https://github.com/brown9804/LaTeX-For-Everyone). Include the LaTeX
-engine, a minimal example, and the error message when reporting compilation
-problems. Do not include private documents or credentials.
-
-## Official learning resources
-
-- [The LaTeX Project](https://www.latex-project.org/help/documentation/)
-- [TeX Live](https://www.tug.org/texlive/)
-- [MiKTeX](https://miktex.org/)
-- [Beamer documentation on CTAN](https://ctan.org/pkg/beamer)
-
-## About this site
-
-The documentation layout and Markdown-to-HTML publishing approach follow
-[Cloud-DevOps-Overview](https://github.com/brown9804/Cloud-DevOps-Overview).
-The reference currently has no `docs` folder; this repository adds one for its
-own LaTeX learning content. The original Cloud-specific tests are not applicable
-here.
-
-The counter below follows the reference's badge format and displays GitHub
-repository views, not website visits or unique people. Daily refresh requires
-the repository's `TRAFFIC_TOKEN` secret; see the
-[setup instructions](https://github.com/brown9804/LaTeX-For-Everyone#repository-views-counter).
-
-<!-- START BADGE -->
-<div align="center">
-  <img src="https://img.shields.io/badge/Total%20views-0-limegreen" alt="Total repository views">
-  <p>Refresh Date: 2026-11-18</p>
-  <p>GitHub repository views, not website visits.</p>
-</div>
-<!-- END BADGE -->
+The shared footer retains the reference-style repository view badge. It counts
+GitHub repository traffic, not visits to this website.

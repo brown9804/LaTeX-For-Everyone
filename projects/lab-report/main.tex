@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.18}
+\usepackage{hyperref}
+
+\title{A Short Motion Report}
+\author{LaTeX for Everyone}
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+This worked report uses four synthetic position measurements to
+demonstrate a reproducible table, a plot, and a simple calculation.
+The values are teaching data, not experimental evidence.
+\end{abstract}
+
+\section{Question and method}
+Does the example data approximately follow constant-speed motion?
+We use the times and positions in \texttt{measurements.csv}. Both
+the table and the plotted points read that same file.
+
+\section{Results}
+\begin{table}[htbp]
+  \centering
+  \caption{Synthetic positions recorded at one-second intervals.}
+  \label{tab:measurements}
+  \pgfplotstabletypeset[
+    col sep=comma,
+    columns/time/.style={column name={Time (s)}},
+    columns/position/.style={column name={Position (m)},
+      fixed,fixed zerofill,precision=1},
+    every head row/.style={before row=\toprule,after row=\midrule},
+    every last row/.style={after row=\bottomrule}
+  ]{measurements.csv}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[width=0.8\linewidth,
+        xlabel={Time (s)},ylabel={Position (m)},
+        grid=major,legend pos=north west]
+      \addplot[only marks,mark=*,black]
+        table[x=time,y=position,col sep=comma]{measurements.csv};
+      \addlegendentry{Synthetic measurements}
+      \addplot[blue,dashed,domain=0:3] {2*x};
+      \addlegendentry{Reference line: position = 2 time}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The points lie near the dashed constant-speed reference line.}
+  \label{fig:motion}
+\end{figure}
+
+\section{Interpretation and limitations}
+From Table~\ref{tab:measurements}, the endpoint estimate is
+\[
+  v_{\mathrm{avg}}=\frac{6.0-0.0}{3-0}
+    =\qty{2.0}{\metre\per\second}.
+\]
+Figure~\ref{fig:motion} is consistent with that simple reference,
+but four synthetic points cannot establish a physical law or
+quantify measurement uncertainty.
+
+\section{Conclusion}
+The example shows how one data file can drive a report's table
+and plot. Real studies need justified sampling, uncertainty analysis,
+and evidence appropriate to their research question.
+\end{document}

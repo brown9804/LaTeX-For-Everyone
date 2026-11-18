@@ -1,0 +1,30 @@
+name: Bug report
+description: Report a reproducible documentation, website, or LaTeX example problem.
+title: "[Bug]: "
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Source path or page URL
+      description: Identify the affected lesson, template, or example.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps and command
+      description: Include a minimal example and the working directory. Remove private data.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual result
+      description: Include the first relevant error, not an entire confidential document.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Tool versions
+      description: Operating system, TeX distribution, LaTeX engine, and browser where relevant.

@@ -1,0 +1,30 @@
+\documentclass[11pt,oneside]{book}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[backend=biber,style=authoryear]{biblatex}
+\addbibresource{../../resources/references.bib}
+\usepackage{hyperref}
+
+\title{A Small Demonstration Thesis}
+\author{LaTeX for Everyone}
+\date{\today}
+
+\begin{document}
+\frontmatter
+\maketitle
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+This teaching document demonstrates a multi-file thesis structure.
+It is not an institution-approved thesis or a submitted dissertation.
+\tableofcontents
+
+\mainmatter
+\input{chapters/introduction}
+\input{chapters/method}
+\input{chapters/conclusion}
+
+\backmatter
+\printbibliography[heading=bibintoc]
+\end{document}

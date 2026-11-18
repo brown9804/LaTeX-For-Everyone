@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  {% if page.is_homepage %}
+    <span aria-current="page">Home</span>
+  {% else %}
+    <a href="{{ nav.homepage.url | url }}">Home</a>
+  {% endif %}
+  {% for ancestor in page.ancestors | reverse %}
+    {% if ancestor.title != "Home" %}
+      <span aria-hidden="true"> / </span>
+      <span>{{ ancestor.title }}</span>
+    {% endif %}
+  {% endfor %}
+  {% if not page.is_homepage %}
+    <span aria-hidden="true"> / </span>
+    <span aria-current="page">{{ page.title }}</span>
+  {% endif %}
+</nav>
+{{ super() }}
+{% endblock %}
+
+{% block footer %}
+<div class="repo-counter">
+  {% include "partials/visitor-counter.html" %}
+</div>
+{{ super() }}
+{% endblock %}

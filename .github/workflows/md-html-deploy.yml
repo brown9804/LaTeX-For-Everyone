@@ -1,4 +1,4 @@
-name: Build and deploy documentation
+name: Validate and deploy learning platform
 
 on:
   push:
@@ -11,51 +11,64 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Test repository views updater
-        run: python3 -m unittest discover -s .github/scripts -p 'test_*.py'
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-docs.txt
 
-      - name: Install Pandoc
+      - name: Install documentation dependencies
+        run: python -m pip install -r requirements-docs.txt
+
+      - name: Run focused automation tests
+        run: python -m unittest discover -s .github/scripts -p 'test_*.py'
+
+      - name: Build MkDocs in strict mode
+        run: python -m mkdocs build --strict
+
+      - name: Check generated internal links and source coverage
+        run: python .github/scripts/check_site.py
+
+      - name: Install LaTeX toolchain
         run: |
           sudo apt-get update
-          sudo apt-get install --yes pandoc
+          sudo apt-get install --yes --no-install-recommends \
+            latexmk biber lmodern texlive-bibtex-extra texlive-latex-extra texlive-science \
+            texlive-pictures texlive-fonts-recommended
 
-      - name: Convert Markdown to HTML
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p _site
-          cp docs/styles.css _site/styles.css
-          while IFS= read -r -d '' file; do
-            relative="${file#docs/}"
-            output="_site/${relative%.md}.html"
-            mkdir -p "$(dirname "$output")"
-            pandoc "$file" \
-              --from=gfm+tex_math_dollars \
-              --to=html5 \
-              --standalone \
-              --table-of-contents \
-              --mathjax=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js \
-              --css=/LaTeX-For-Everyone/styles.css \
-              --lua-filter=.github/scripts/markdown-links.lua \
-              --output="$output"
-          done < <(find docs -type f -name '*.md' -print0)
-          test -s _site/index.html
-          test -s _site/getting-started.html
+      - name: Compile all examples, templates, and projects
+        run: python .github/scripts/validate_examples.py
+
+      - name: Upload compiled examples and build logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-examples
+          path: |
+            examples/**/build/*.pdf
+            examples/**/build/*.log
+            templates/**/build/*.pdf
+            templates/**/build/*.log
+            projects/**/build/*.pdf
+            projects/**/build/*.log
+          if-no-files-found: ignore
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: site
 
   deploy:
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-    needs: build
+    needs: validate
     runs-on: ubuntu-latest
     permissions:
       pages: write

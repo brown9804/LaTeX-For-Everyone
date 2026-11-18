@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[backend=biber,style=authoryear]{biblatex}
+\addbibresource{../../resources/references.bib}
+\usepackage{hyperref}
+
+\begin{document}
+\section{Citing a source}
+\textcite{lamport1994} explains LaTeX's document preparation model.
+The project also maintains online documentation
+\parencite{latex-project}.
+
+These are references to external works, not claims that their text
+is included in this repository.
+\printbibliography
+\end{document}
